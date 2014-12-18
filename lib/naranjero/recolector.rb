@@ -71,7 +71,7 @@ module Naranjero
         end
         
         def recoger
-            10.times do |i|
+            2.times do |i|
                 @hilos << Thread.new do
                     
                     if(@naranjero.edad == EdadMuerte)
@@ -102,7 +102,7 @@ module Naranjero
         
         
         def crecer
-            10.times do
+            2.times do
                 @hilos << Thread.new do
                     
                     if(@naranjero.edad == EdadMuerte)

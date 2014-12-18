@@ -84,7 +84,7 @@ module Naranjero
                 before :each do
                     @persona=Recolector.new(Mutex.new,ConditionVariable.new,Arbol.new)
                     @persona.cosechar
-                    sleep 0.5
+                    sleep 1
                     # hilos.each {|i| i.join}
                     @persona.kill
                     
