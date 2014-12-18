@@ -5,7 +5,7 @@ module Naranjero
 
     class Arbol
         
-        attr_reader :altura, :edad, :produccion
+        attr_accessor :altura, :edad, :produccion
         
         
         CrecimientoAlAnho=2
@@ -25,7 +25,7 @@ module Naranjero
         def uno_mas
             if(@edad == EdadMuerte)
                 @altura=0
-                "El arbol esta muerto, murio a la edad #{@edad} anhos"
+               puts "El arbol esta muerto, murio a la edad #{@edad} anhos"
              else
                 @edad += 1
                 @altura += CrecimientoAlAnho
@@ -38,26 +38,22 @@ module Naranjero
             if(@edad >= EdadEmpiezaCuaje)    
                 @produccion= rand(@edad..EdadMuerte) * @edad*ProduccionAnualBase
             end
+            @produccion
         end
         
         def recolectar_una
+            
             if(@edad == EdadMuerte)
-                "El arbol esta muerto, no tiene naranjas :(, lo siento."
+                puts "El arbol esta muerto, no tiene naranjas :(, lo siento.\n"
             elsif(@produccion > 0)
                 @produccion -= 1
-                "ÑUM ÑUM ÑUM, Que rica estaba!"
+                puts  "ÑUM ÑUM ÑUM, Que rica estaba la naranja!\n"
             else
-                "No hay naranjas disponibles, vuelve mas tarde"
+               puts "No hay naranjas disponibles, vuelve mas tarde\n"
             end
-            
-            
             
         end
         
         
     end
-    
-    
-    
-    
 end
