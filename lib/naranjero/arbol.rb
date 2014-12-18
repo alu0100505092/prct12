@@ -38,7 +38,7 @@ module Naranjero
             if(@edad >= EdadEmpiezaCuaje)    
                 @produccion= rand(@edad..EdadMuerte) * @edad*ProduccionAnualBase
             end
-            @produccion
+            puts "Hay un total de #{@produccion}  naranjas"
         end
         
         def recolectar_una

@@ -83,8 +83,10 @@ module Naranjero
             context "Recolector de naranjas y crecimiento" do 
                 before :each do
                     @persona=Recolector.new(Mutex.new,ConditionVariable.new,Arbol.new)
-                    hilos=@persona.cosechar
-                    hilos.each {|i| i.join}
+                    @persona.cosechar
+                    sleep 0.5
+                    # hilos.each {|i| i.join}
+                    @persona.kill
                     
                 end
                 
